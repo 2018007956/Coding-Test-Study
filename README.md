@@ -29,6 +29,5 @@
 | 10   | 실전 문제 풀이               |[기출문제](https://github.com/CodeTest-StudyGroup/Code-Test-Study)|  | |
 
 ## 💻 참고 사이트
-1) https://github.com/ndb796/python-for-coding-test
-2) https://github.com/tony9402/baekjoon
-3) https://github.com/CodeTest-StudyGroup/Code-Test-Study
+1) https://github.com/tony9402/baekjoon
+2) https://github.com/CodeTest-StudyGroup/Code-Test-Study
