@@ -1,4 +1,4 @@
-<div align="center"?
+<div align="center"
 # Coding-Test-Study
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2F2018007956%2FCoding-Test-Study%2Fhit-counter&count_bg=%233E42D7&title_bg=%23353333&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
      
@@ -11,7 +11,7 @@
 ## 👩 팀원 소개
 |김채아|박경하|김나영|
 |---|---|---|
-|[Github](https://github.com/2018007956) Python|[Github](https://github.com/kyeong-ha) Javascript|[Github](https://github.com/autumn-Y) Python|
+|[Github](https://github.com/2018007956)  Python|[Github](https://github.com/kyeong-ha)  Javascript|[Github](https://github.com/autumn-Y)  Python|
 
 ## 🔰 스터디 방식
 메인 알고리즘 선정, 난이도 별 5문제 풀이
