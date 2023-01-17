@@ -1,9 +1,10 @@
-<div align="center"
+<div align=center>
+     
 # Coding-Test-Study
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2F2018007956%2FCoding-Test-Study%2Fhit-counter&count_bg=%233E42D7&title_bg=%23353333&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
+  
 </div>
 
-<div align="left"
 ## ⏲ 진행 기간
 23.01.02 ~  
 매주 월요일 오후 4시
@@ -38,4 +39,3 @@
 ## 💻 참고 사이트
 1) https://github.com/tony9402/baekjoon
 2) https://github.com/CodeTest-StudyGroup/Code-Test-Study
-</div>
