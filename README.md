@@ -1,20 +1,29 @@
+<div align=center>
+     
 # Coding-Test-Study
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2F2018007956%2FCoding-Test-Study%2Fhit-counter&count_bg=%233E42D7&title_bg=%23353333&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
+  
+</div>
 
-## 💻 준비 기간
-23.01.02 ~
+## ⏲ 진행 기간
+23.01.02 ~  
 매주 월요일 오후 4시
 
-## 💻 사용 언어
-- Python
-- javascript
+## 👩 팀원 소개
+|김채아|김나영|박경하|
+|:---:|:---:|:---:|
+|[<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">](https://github.com/2018007956)|[<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">](https://github.com/autumn-Y)|[<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">](https://github.com/kyeong-ha)|
+|<img alt="Python" src ="https://img.shields.io/badge/Python-3776AB.svg?&style=for-the-badge&logo=Python&logoColor=white"/>|<img alt="Python" src ="https://img.shields.io/badge/Python-3776AB.svg?&style=for-the-badge&logo=Python&logoColor=white"/>|<img alt="JavaScript" src ="https://img.shields.io/badge/JavaScriipt-F7DF1E.svg?&style=for-the-badge&logo=JavaScript&logoColor=black"/>|
 
-## 💻 진행 계획
+## 🔰 스터디 방식
 메인 알고리즘 선정, 난이도 별 5문제 풀이
-
-매일 한 두 문제씩 각자 풀고, 월요일 스터디 시간에 본인 코드 설명
+매일 한 두 문제씩 각자 풀고 스터디 시간에 본인 코드 설명  
 한 사람이 다음주 진행할 알고리즘 이론 설명
 
-## 💻 목차
+알고리즘 개념 복습 한바퀴 끝나면
+실제 코테처럼 시간 정해놓고 문제 풀이
+
+## 📌 목차
 | **주차** | **알고리즘**    | **문제 1**                                                   | **문제 2**                                                   | **문제 3**                                                   | **문제 4**                                                   | **문제 5**                                                   | 
 | -------- | -------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | 
 | 1    | 수학               | [소수 찾기](https://www.acmicpc.net/problem/1978) | [소인수 분해](https://www.acmicpc.net/problem/11653) | [부분수열의 합](https://www.acmicpc.net/problem/1182) | [골드바흐의 추측](https://www.acmicpc.net/problem/9020) | [숨바꼭질 6](https://www.acmicpc.net/problem/17087) |
@@ -29,6 +38,5 @@
 | 10   | 실전 문제 풀이               |[기출문제](https://github.com/CodeTest-StudyGroup/Code-Test-Study)|  | |
 
 ## 💻 참고 사이트
-1) https://github.com/ndb796/python-for-coding-test
-2) https://github.com/tony9402/baekjoon
-3) https://github.com/CodeTest-StudyGroup/Code-Test-Study
+1) https://github.com/tony9402/baekjoon
+2) https://github.com/CodeTest-StudyGroup/Code-Test-Study

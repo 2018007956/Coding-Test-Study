@@ -20,4 +20,3 @@ n.forEach(element => {
     }
     console.log(a + " " + b);
 });
-
