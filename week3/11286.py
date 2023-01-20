@@ -6,7 +6,6 @@ N = int(input())
 arr = []
 for i in range(N):
     x = int(input())
-
     if x != 0:
         hq.heappush(arr, (abs(x), x))
     else:
