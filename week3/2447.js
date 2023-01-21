@@ -15,7 +15,7 @@ function setPattern(n, pattern){
     }
     return newPattern;
 }
-
+  
 function f(n, pattern){
     if(n === 3) return [['*', '*', '*'], ['*', ' ', '*'], ['*', '*', '*']];
     else {

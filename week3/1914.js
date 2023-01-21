@@ -13,7 +13,7 @@ function hanoi(n, src, mid, dest){
         hanoi(n-1, mid, src, dest); // 1,2,3 -> 2,1,3
     }
 }
-
+ 
 let pow = 1n;
 for(let i=0; i<n; i++){
     pow *= 2n;
