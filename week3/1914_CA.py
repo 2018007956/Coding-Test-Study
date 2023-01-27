@@ -1,6 +1,6 @@
 def f(n,a,b,c):
     if n==1:
-        print(a,c, sep=' ')
+        print(a,c)
     else:
         f(n-1,a,c,b)
         f(1,a,b,c)
@@ -10,7 +10,6 @@ N = int(input())
 print(2**N-1)
 if N<=20:
     f(N,1,2,3)
-
 '''
 젤 큰 값부터 하나씩 s3에 넣어야 함
 while문을 돌면서 s2,s3 확인하고 
