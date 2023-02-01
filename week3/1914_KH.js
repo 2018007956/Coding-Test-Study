@@ -1,7 +1,7 @@
 // 하노이 탑
 const n = Number(require('fs').readFileSync('/dev/stdin'));
 let result = [];
-let count = 0;
+let count = 0; 
 
 function hanoi(n, src, mid, dest){
     if(n === 1) {
