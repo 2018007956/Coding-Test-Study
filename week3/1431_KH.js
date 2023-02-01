@@ -1,6 +1,6 @@
 // 시리얼 번호
 let n = require('fs').readFileSync('/dev/stdin').toString().trim().split('\n');
-n = n.slice(1, n.length);
+n = n.slice(1, n.length); 
 
 function addString(string){
     let n = 0;
@@ -9,7 +9,7 @@ function addString(string){
     }
     return n;
 }
-
+ 
 n = n.sort(function(a, b) {
     if(a.length === b.length){
         const aAdd = addString(a);

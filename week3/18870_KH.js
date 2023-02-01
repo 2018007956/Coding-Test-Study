@@ -1,7 +1,7 @@
 // 좌표 압축
 let n = require('fs').readFileSync('/dev/stdin').toString().trim().split(/\s/).map(Number);
 n = n.slice(1, n.length);
-
+  
 function binarySearch (target, dataArray) {
     let low = 0;
     let high = dataArray.length - 1;

@@ -1,9 +1,9 @@
 // 절대값 힙
 const fs = require('fs');
 const [_, ...input] = fs.readFileSync("./dev/stdin").toString().trim().split("\n");
-
+ 
 const num = input.map(v => +v);
-
+ 
 class AbsoluteMinHeap {
   constructor() {
     this.heap = [];
