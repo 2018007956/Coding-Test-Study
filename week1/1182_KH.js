@@ -3,7 +3,7 @@ const n = input[0];
 const s = input[1];
 const sequence = input.slice(2, n+2);
 let count = 0;
-
+ 
 function DFS(arr, i) {  
     if(arr.reduce((accumulator, curr) => (accumulator + curr)) == s)
         count++;

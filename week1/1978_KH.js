@@ -1,7 +1,7 @@
 const input = require('fs').readFileSync('/dev/stdin').toString().trim().split(/\s/).map(Number);
 let numberOfPrimes = input[0];
 const primeNumber = input.slice(1, input[0]+1);
-
+ 
 primeNumber.forEach(element => {
     if(element == 1){
         numberOfPrimes--;

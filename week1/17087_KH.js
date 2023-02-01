@@ -2,7 +2,7 @@ const input = require('fs').readFileSync('/dev/stdin').toString().trim().split(/
 const numberOfBrothers = input[0];
 const subin = input[1];
 const brothers = input.slice(2, numberOfBrothers+2);
-
+ 
 let distanceOfSubinAndBrothers = [];
 brothers.forEach(element => {
     distanceOfSubinAndBrothers.push(Math.abs(subin - element));
