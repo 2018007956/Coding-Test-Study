@@ -2,7 +2,7 @@
 const n = Number(require('fs').readFileSync('/dev/stdin'));
 let result = [];
 let count = 0; 
-
+ 
 function hanoi(n, src, mid, dest){
     if(n === 1) {
         result.push([src, dest]);

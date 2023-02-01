@@ -1,6 +1,6 @@
 // 별 찍기 - 10
 const n = Number(require('fs').readFileSync('/dev/stdin'));
- 
+  
 function setPattern(n, pattern){
     let newPattern = new Array(n);
 
