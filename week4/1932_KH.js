@@ -2,7 +2,7 @@
 let dp = require('fs').readFileSync('/dev/stdin').toString().trim().split('\n');
 n = Number(dp[0]);
 dp = dp.slice(1, dp.length);
-
+ 
 dp.forEach((value, index) => {
     dp[index] = value.split(' ').map(Number);
 });
