@@ -1,4 +1,4 @@
-# programmers - 프린터 문제
+# programmers - 프린터 문제 
 
 def solution(priorities, location):
     answer = 0
