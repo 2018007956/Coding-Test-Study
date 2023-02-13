@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <vector>
 #include <algorithm>
+#include <memory.h>
 using namespace std;
 #define MAX 50
 
@@ -34,30 +35,35 @@ void find_island(int row, int col) {
 }
 
 int main() {
-    int w, h;
+    int w, h, ans;
 
-    while(true) {
+    while(true) {        
         cin >> w >> h;
         if(w == 0 && h == 0) {
             break;
         }
 
-        for(int i = 0; i < w ; i++) {
-            for(int j = 0; j < h; j++) {
-                cin >> input_data[i][j];
+        ans = 0;
+        memset(input_data, 0, sizeof(input_data));
+        memset(visited, false, sizeof(visited));	
+
+        for(int i = 0; i < h ; i++) {
+            for(int j = 0; j < w; j++) {
+                scanf(" %d", &input_data[i][j]);
             }
         }
 
-        for(int i = 0; i < w ; i++) {
-            for(int j = 0; j < h; j++) {
+        for(int i = 0; i < h ; i++) {
+            for(int j = 0; j < w; j++) {
                 if(visited[i][j] == false & input_data[i][j] == 1) {
-                    visited[i][j] = true;
-                    cnt = 1;
+                    // cnt = 0;
+					visited[i][j] = true;
                     find_island(i, j);
-                    cout << cnt << "\n";
+                    ans++;
                 }
 		    }   		
 	    }
+        cout << ans << "\n";
     }
 
     return 0;

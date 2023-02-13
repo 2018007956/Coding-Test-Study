@@ -9,9 +9,7 @@ def detect_cycle(start_pos):
     if visited[start_pos]:
         return False
 
-    visited[start_pos] = True
-
-    if data[visited[data[start_pos]]]:
+    if visited[data[start_pos]]:
         return True
     
     return detect_cycle(data[start_pos])
