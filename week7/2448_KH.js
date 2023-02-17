@@ -7,7 +7,8 @@ const n = Number(require('fs').readFileSync('/dev/stdin'));
 // 3 ->     2           8
 // 4 ->   1   3       7   9
 // 5 -> 0 1 2 3 4   6 7 8 9 10
-// i -> |(n-1)-i|
+
+// i -> |(n-1)-i| 가 패턴 적용 범위가 된다.
 
 
 
@@ -28,12 +29,13 @@ function setPattern(n, pattern){
     for(let i=0; i<n; i++){
         newPattern[i] = new Array(2*n-1);
         for(let j=0; j<2*n-1; j++){
-            if(j >= (n-1)-i && j <= (n-1)+i){
-                if(i > n/2-1){
-                    if(j == n-1) newPattern[i][j] = ' ';
-                    else newPattern[i][j] = pattern[i%(n/2)][(j%n)];
+            if(j >= (n-1)-i && j <= (n-1)+i){ // 패턴 적용 범위인지 체크
+                if(i > n/2-1){ // 가운데(세로) 이후
+                    if(j < n-1) newPattern[i][j] = pattern[i%(n/2)][j]; // 세로부분은 이전 index에 맞게 % 연산, 가로부분은 index가 그대로
+                    else if(j == n-1) newPattern[i][j] = ' '; // 가운데(가로)는 공백으로 채운다
+                    else newPattern[i][j] = pattern[i%(n/2)][j-n]; // 가로부분은 정확히 n만큼 차이가 난다
                 }
-                else newPattern[i][j] = pattern[i%(n/2)][j-n/2];
+                else newPattern[i][j] = pattern[i%(n/2)][j-(n/2)];  //가운데(세로) 이전
             }
             // newPattern[i][j] = '*';
             else newPattern[i][j] = ' ';
