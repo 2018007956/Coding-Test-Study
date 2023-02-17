@@ -1,7 +1,7 @@
 // 별 찍기 - 11
 const n = Number(require('fs').readFileSync('/dev/stdin'));
   
-// 0 ->           5
+// 0 ->           5 
 // 1 ->         4   6
 // 2 ->       3 4 5 6 7
 // 3 ->     2           8
