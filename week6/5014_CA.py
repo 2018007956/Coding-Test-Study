@@ -1,3 +1,24 @@
+from collections import deque
+F, S, G, U, D = map(int, input().split())
+# F: 총 층수, S: 강호 위치, G: 링크 위치
+cnt = 0
+def bfs(x, U, D):
+    global cnt 
+    q = deque([x])
+    # visited[x] = True
+    while q:
+        x = q.popleft()
+        cnt += 1
+        if x == G:
+            print(cnt)
+            return
+        q.append(x+U)
+        q.append(x-D)
+
+# visited = [False] * (n + 1)
+bfs(S, U, D)
+
+'''
 F, S, G, U, D = map(int, input().split())
 # F: 총 층수, S: 강호 위치, G: 링크 위치
 cnt = 0
@@ -23,8 +44,6 @@ def downstairs(S,G,D):
         cnt += 1
     return S,D
 
-test = S
-origin_S = list([S]) # int deep copy
 while S!=G:
     if S<G:
         if U!=0:
@@ -55,8 +74,7 @@ while S!=G:
 else:
     print(cnt)
 
-print(origin_S, test, S)
-'''
+
 직관적으로 짜버리면 반례가 나올 수 있음
 BFS로 구현하게 되면 그런 경우를 방지할 듯
 
@@ -115,5 +133,6 @@ Down 후 S<1 또는 UP 후 S>1000000 일때 use the stairs 출력
 46
 54
 => 얘는 어떤 경우지..
-
+=> 경우의 수가 너무 많음
+=> BFS로 풀기..
 '''
