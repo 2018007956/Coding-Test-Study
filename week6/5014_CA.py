@@ -1,22 +1,24 @@
 from collections import deque
-F, S, G, U, D = map(int, input().split())
-# F: 총 층수, S: 강호 위치, G: 링크 위치
-cnt = 0
-def bfs(x, U, D):
+
+def bfs(x):
     global cnt 
     q = deque([x])
-    # visited[x] = True
+    visited[x] = True
     while q:
         x = q.popleft()
-        cnt += 1
         if x == G:
-            print(cnt)
+            print(visited[x]-1)
             return
-        q.append(x+U)
-        q.append(x-D)
+        for i in (x+U, x-D):
+            if 0 < i <=F and not visited[i]:
+                visited[i] = visited[x] + 1
+                q.append(i)
+    else:
+        print('use the stairs')
 
-# visited = [False] * (n + 1)
-bfs(S, U, D)
+F, S, G, U, D = map(int, input().split())
+visited = [False] * (F + 1)
+bfs(S)
 
 '''
 F, S, G, U, D = map(int, input().split())
