@@ -1,4 +1,4 @@
-// 종이의 개수
+// 병든 나이트
 const input = require('fs').readFileSync('/dev/stdin').toString().trim().split(' ').map(Number);
 const [height, width] = input;
 
