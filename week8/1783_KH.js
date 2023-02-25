@@ -6,15 +6,15 @@ let count = 1;
 
 /* 규칙 2와 3만을 적용할 수 있는 경우 */
 if(height == 2){
-    if(width > 4) count = 4;
+    if(width > 7) count = 4;
     else count = Math.ceil(width/2);
 }
 /* 이동 방법에 대한 제약이 있는 경우 */
-else if(width >= 7)
+else if(width >= 7 && height >= 3)
     count = 5 + (width - 7);
 
 /* 이동 방법에 대한 제약이 없는 경우(이동횟수 4 이하) */
-else{
+else if(height >= 3){
     if(width > 4) count = 4;
     else count = width;
 }
