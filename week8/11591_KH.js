@@ -1,5 +1,5 @@
 // 주식
-const input = require('fs').readFileSync('text.txt').toString().trim().split('\n');
+const input = require('fs').readFileSync('/dev/stdin').toString().trim().split('\n');
 let result = [];
 
 function maxIdxOfArray(array, startIdx){
