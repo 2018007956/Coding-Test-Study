@@ -1,6 +1,6 @@
 // 도영이가 만든 맛있는 음식
 const input = require('fs').readFileSync('/dev/stdin').toString().trim().split('\n');
-
+ 
 /* 가능한 모든 조합을 구하는 함수 */
 const getCombinations = function (arr, N) {
     let results = [];
