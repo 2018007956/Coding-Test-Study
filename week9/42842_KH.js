@@ -6,9 +6,6 @@ function solution(brown, yellow) {
         let length = width * ((brown+4-width*2)/2); // 카펫의 가로 길이 * 세로 길이 = 총 픽셀 수
         // ((brown+4-width*2)/2) 은 카펫의 세로 길이로, brown+4는 padding 처리를 위함.
 
-        // console.log(width)
-        // console.log((brown+4-width*2)/2)
-        // console.log(length)
         if(length-brown-yellow === 0) return [width, (brown+4-width*2)/2]; // 카펫의 총 픽셀 수 == brown 와 yellow을 모두 쓴 것과 일치하면 종료
     }
     return answer;
