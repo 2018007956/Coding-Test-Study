@@ -1,2 +1,2 @@
-// 후보 추천하기
+// 감시
 const input = require('fs').readFileSync('test.txt').toString().trim().split('\n');
