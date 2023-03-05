@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.rmd": "markdown",
+        "vector": "cpp",
+        "deque": "cpp",
+        "string": "cpp"
+    }
+}
