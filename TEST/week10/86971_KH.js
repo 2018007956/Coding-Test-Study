@@ -1,3 +1,4 @@
+// 전력망을 둘로 나누기
 let number_of_tower = [0, 0];
 
 function solution(n, wires) {
