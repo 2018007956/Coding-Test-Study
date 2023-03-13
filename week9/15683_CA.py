@@ -1,4 +1,5 @@
 from collections import deque
+
 def dfs(x):
     for direction in range(len(cctv[arr[x][y]])):
         # arr reset
@@ -16,7 +17,7 @@ for _ in range(N):
     arr.append(input().split())
 
 # up, down, left, right
-# 0     1    2      3
+# 0    1     2      3
 row_dr = [0,0,-1,1]
 col_dr = [-1,1,0,0]
 cctv = [
@@ -34,3 +35,7 @@ for i in range(N):
         if arr[i][j]!=0 and arr[i][j]!=6:
             q.append([i,j])
 dfs()
+
+'''
+하는중
+'''
