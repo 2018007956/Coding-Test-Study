@@ -14,12 +14,9 @@ for i in range(1,N+1):
 
 res = []
 for i in comb_cook:
-    if len(i)==1:
-        res.append(abs(i[0][1]-i[0][0]))
-    else:
-        m = prod(list(zip(*i))[0])
-        s = sum(list(zip(*i))[1])
-        res.append(abs(m-s))
+    s = prod(list(zip(*i))[0])
+    b = sum(list(zip(*i))[1])
+    res.append(abs(s-b))
 print(min(res))
 
 '''
