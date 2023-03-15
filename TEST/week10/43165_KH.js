@@ -1,15 +1,5 @@
 // 타겟 넘버
 
-// 00000
-// 00001
-// 00010
-// 00100
-// 01000
-// 10000
-// 10001
-// ...
-// 11111
-
 function solution(numbers, target) {
     const length = Math.pow(2, numbers.length); // (numbers.length)의 제곱
     
@@ -36,3 +26,15 @@ function solution(numbers, target) {
     
     return (result.filter((value)=> value == target).length); // 구한 값이 target인지 체크
 }
+
+/*  
+    00000
+    00001
+    00010
+    00100
+    01000
+    10000
+    10001
+    ...
+    11111
+*/
