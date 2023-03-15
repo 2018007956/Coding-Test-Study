@@ -10,28 +10,29 @@
 // ...
 // 11111
 
-let target = [1, 1, 1, 1, 1];
-let decimal = 0;
-let result = new Array(32).fill(0);
-let prefix_array = new Array(32);
-prefix_array[0] = new Array(5).fill('-');
+function solution(numbers, target) {
+    const length = Math.pow(2, numbers.length); // (numbers.length)의 제곱
+    
+    let decimal = 0;
+    let result = new Array(length).fill(0);
+    
+    let prefix_array = new Array(length); // +와 -의 조합을 담을 array
+    prefix_array[0] = '0'.repeat(numbers.length);
 
-for(let i=1; i<32; i++){
-    prefix_array[i] = new Array(5).fill('-');
-    decimal += 1;
-    const binary = (decimal).toString(2);
-
-    for(let j=binary.length-1; j>=0; j--){ // 00000 패턴에 맞춰주기 위해 array에 덮어쓰기
-        if(binary[j] == 1) prefix_array[i][j] = '+'; // 1 이면 +
-        else prefix_array[i][j] = '-'; // 0 이면 -
+    for(let i=1; i<length; i++){
+        decimal += 1;
+        const binary = (decimal).toString(2); //10진수 to 2진수
+        
+        prefix_array[i] = binary.padStart(numbers.length, '0'); // pattern에 맞게 padding 처리
     }
+
+    for(let i=0; i<prefix_array.length; i++){ // 각 경우에 대한 값 계산
+        for(let j=0; j<prefix_array[i].length; j++){
+                result[i] += 
+                    prefix_array[i][j] == 0 ? 
+                    eval('+' + numbers[j]) : eval('-' + numbers[j]);
+        }
+    } 
+    
+    return (result.filter((value)=> value == target).length); // 구한 값이 target인지 체크
 }
-
-
-for(let i=0; i<prefix_array.length; i++){ // 각 경우의 수 계산
-    for(let j=0; j<prefix_array[i].length; j++){
-            result[i] += eval(prefix_array[i][j] + target[j]);
-    }
-} 
-
-console.log(result.filter((value) == numbers).length);
