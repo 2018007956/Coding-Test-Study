@@ -2,7 +2,7 @@
 let input = require('fs').readFileSync('test.txt').toString().trim().split('\n');
 const number_of_town = input.shift();
 const number_of_citizens_in_town = input.shift().split(' ').map(Number);
-let excellent_towns = [];
+let result = [];
 
 class Tree{
     constructor(n, citizens){
@@ -16,22 +16,46 @@ class Tree{
         this.tree[dest_index].city.push(src_index); // 무방향 그래프이므로 둘 다 삽입
     }
 
-    select_city(src_city, tree){
-        const dest_city = tree[src_city].city;
-        // const dest_city = tree[Object.keys(tree)[0]].city;
-        // console.log(Object.keys(tree)[0]);
-        // console.log(dest_city);
-        const citizens = tree[src_city].citizens;
+    getWoosooTown(src_index, town){
+        if(!town.hasOwnProperty(src_index)) return 0;
 
-        delete tree[src_city];
-        for(let i=0; i<dest_city.length; i++)
-            delete tree[dest_city[i]];
+        let candidate_next_src = [];
+        let next_src = [];
+        // let totoal_citizens = town[src_index].citizens;
 
-        return citizens;
+        for(const dest of town[src_index].city){
+            if(!town.hasOwnProperty(dest)) continue;
+        
+            // 인접노드 방문표시
+            // totoal_citizens += town[dest].citizens;
+            for(const d of town[dest].city){
+                candidate_next_src.push(d);
+            }
+            delete town[dest];
+        }
+
+        // src 노드 방문표시
+        delete town[src_index];
+
+        candidate_next_src = Array.from(new Set(candidate_next_src));
+        for(const i of candidate_next_src){
+            if(town.hasOwnProperty(i))
+                next_src.push(i);
+        }
+
+        return next_src;
+        // return totoal_citizens;
     }
 };
 
-
+function getMaxIndexAtCitizens(town, indexs){
+    max_index = indexs[0];
+    for(let j=1; j<indexs.length; j++){
+        if(town[max_index].citizens < town[indexs[j]].citizens)
+            max_index = indexs[j];
+    }
+    return max_index;
+}
 
 // 그래프 생성
 let tree = new Tree(number_of_town, number_of_citizens_in_town);
@@ -40,26 +64,46 @@ input.forEach(element => {
     tree.insert(src, dest);
 });
 
-let candidate = tree.tree['1'].city.slice();
-candidate.push(1);
-let result = new Array(candidate.length).fill(0);
+// {
+//     '1': { city: [ 2 ], citizens: 1000 },
+//     '2': { city: [ 1, 3, 6 ], citizens: 3000 },
+//     '3': { city: [ 2, 4 ], citizens: 4000 },
+//     '4': { city: [ 3, 5 ], citizens: 1000 },
+//     '5': { city: [ 4 ], citizens: 2000 },
+//     '6': { city: [ 2, 7 ], citizens: 2000 },
+//     '7': { city: [ 6 ], citizens: 7000 }
+// }
+// console.log(temp_town)
+for(let i=1; i<=number_of_town; i++){
+    let temp_town = Object.assign({}, tree.tree);
+    let selected_index = i;
+    let total_citizens = 0;
 
-console.log(candidate)
-// console.log(tree.delete_neigbor('1', Object.assign({}, tree.tree)))
-
-while(candidate.length > 0){
-    let candidate_tree = Object.assign({}, tree.tree);
-    let src_city = candidate.pop();
-
-    console.log(src_city);
-    while(Object.keys(candidate_tree).length > 0){
-        console.log(candidate_tree)
-
-        // const max = Math.max(...Object.keys(candidate_tree).map(key => candidate_tree[key].citizens));
-        // const src_city = Object.keys(candidate_tree).find(key => candidate_tree[key].citizens == max);
-
-        result[candidate.length-1] += tree.select_city(src_city, candidate_tree);
-        // console.log(i)
+    console.log(temp_town);
+    while(true){
+        total_citizens += temp_town[selected_index].citizens;
+        // console.log('citizens : ' + temp_town[selected_index].citizens)
+        next_src = tree.getWoosooTown(selected_index.toString(), temp_town);
+        // console.log('next_src');
+        // console.log(next_src);
+        // console.log(temp_town);
+        if(Object.keys(temp_town).length <= 0) break;
+        if(next_src.length <= 0) selected_index = getMaxIndexAtCitizens(temp_town, Object.keys(temp_town));
+        else selected_index = getMaxIndexAtCitizens(temp_town, next_src);
+        
+        // selected_index = next_src[0];
+        // for(let j=1; j<next_src.length; j++){
+        //     if(temp_town[selected_index].citizens < temp_town[next_src[j]].citizens){
+        //         selected_index = next_src[j];
+        //     }
+        // }
+// 
+        // console.log('selected_index')
+        // console.log(selected_index)
     }
+
+    // console.log(total_citizens);
+    result.push(total_citizens);
 }
-console.log(result);
+
+console.log(Math.max(...result));
