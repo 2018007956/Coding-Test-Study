@@ -70,15 +70,15 @@ function findDiagonalLine(arr){
 
 function solution(board) {
     // board가 정상일 조건
+
     // 1) O의 개수 >= X의 개수
-    // 2) 가로, 세로, 대각선에 대해 1번 이하의 줄이 있어야 함
-    
-    
     const numberOfO = findNumber(board, 'O');
     const numberOfX = findNumber(board, 'X');
     if(numberOfO < numberOfX) return 0;
     else if(numberOfO == 0 && numberOfX == 0) return 1;
+    else if(numberOfO+numberOfX == 9) return 1;
 
+    // 2) 가로, 세로, 대각선에 대해 1번 이하의 줄이 있어야 함
     if (findHorizontalLine(board) == false) return 0;
     else if(findVerticalLine(board) == false) return 0;
     else if(findDiagonalLine(board) == false) return 0;
