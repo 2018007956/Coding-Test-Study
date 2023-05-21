@@ -1,3 +1,4 @@
+// 혼자서 하는 틱택토
 #include <string>
 #include <vector>
 
@@ -19,9 +20,6 @@ int match_check(int i, int j, vector<string> v) {
         if(!(a < 0 || a >= 3 || a1 < 0 || a1 >=3 || b < 0 || b >= 3 || b1 < 0 || b1 >=3)) {
             if(v[a][a1] == shape && v[b][b1] == shape) {
                 count++;
-                if((k == 6 || k == 8) && shape == 'O') {
-                    cross_case++;
-                }
             }
         }
     }
@@ -61,16 +59,6 @@ int solution(vector<string> board) {
     else if((num_o + num_x == 9) && (num_o - num_x != 1)){
         answer = 0;
     }
-    
-    // 가운데로 끝내는 경우
-    else if((win_o == 2) && (cross_case == 2)) {
-        answer = 1;
-    }
-    
-    // 정답이 1개가 아닌 경우
-    else if(win_o > 1 || win_x > 1 || (win_o && win_x)) {
-        answer = 0;
-    }
 
     // 정답인 O 배열일 때, X의 개수가 더 작지 않은 경우
     else if((win_o == 1) && !(num_o > num_x)) {
@@ -81,7 +69,17 @@ int solution(vector<string> board) {
     else if((win_x == 1) && !(num_o == num_x)) {
         answer = 0;
     }
-    
+
+    // 정답이 2개일 때, 가능할 수 있는 경우는 선공이 5번한 경우 뿐!
+    else if((win_o == 2) && (num_o == 5)) {
+        answer = 1;
+    }   
+
+    // 이외에 정답이 1개가 아닌 경우
+    else if(win_o > 1 || win_x > 1 || (win_o && win_x)) {
+        answer = 0;
+    }
+
     else {
         answer = 1;
     }
