@@ -28,3 +28,5 @@ def solution(board):
         if 
     
     return answer
+
+# https://www.ai-bio.info/programmers/160585
