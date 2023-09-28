@@ -1,3 +1,4 @@
+# -- 실패
 import sys
 from collections import Counter 
 input = sys.stdin.readline
@@ -115,12 +116,3 @@ board[:][0] 했는데 row가 뽑혔다. 왜지???
 <리스트 좌/우/위/아래 탐색하는 경우>
 IndexError: list index out of range 조심하기!
 '''
-
-
-# a = [[1,2,3],
-#      [4,5,6],
-#      [7,8,9]]
-
-
-# print(zip(*a))
-# print(list(zip(*a)))
